@@ -1,27 +1,40 @@
 using System;
+using System.Collections.Generic;
+
 namespace TicTacToe
 {
     public class Board
     {
-        public Board(int size)
+        public Board()
         {
-            this._size = size;
+            CreateFields();
         }
 
-        private int _size;
+        public List<Field> Fields = new List<Field>(); 
 
-        public string GetBoard()
+        private void CreateFields()
         {
-            string board = "";
-            for(int i = 0; i < this._size; i++)
+            for(int i = 1; i < 4; i++)
             {
-                for(int j = 0;j < this._size; j++)
+                for(int j = 1; j < 4; j++)
                 {
-                    board = String.Concat(board, "* ");
+                    Fields.Add(new Field(i,j,"*"));
                 }
-                board = String.Concat(board,"\n");
             }
-            return board;
         }
+
+        public bool CheckFieldIsFree(int row, int column)
+        {
+            foreach(Field field in Fields)
+            {
+                if (field.Row == row && field.Column == column)
+                {
+                    return (field.Value == "*") ? true : false;
+                }
+            }
+            return false;
+        }
+
+        
     }
 }
