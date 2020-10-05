@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System;
 using Xunit;
 
@@ -34,7 +35,7 @@ namespace TicTacToe.Tests
             
             board.SetFieldValue(2,2,"X");
             
-            Field testField = null; // TODO: Need to assign variable a value
+            Field testField = null; // Note: Need to assign variable a value
             foreach(Field field in board.Fields)
             {
                 if (field.Row == 2 && field.Column == 2)
@@ -43,6 +44,17 @@ namespace TicTacToe.Tests
                 }
             }
             Assert.Equal("X", testField.Value);
+        }
+
+        [Fact]
+        public void ShouldThrowException_ForInputsOutOfRange()
+        {
+            var board = new Board();
+            var exceptionMessage = "Row or column inputs are out of range";
+
+            var ex = Assert.Throws<ArgumentException>(() => board.CheckFieldIsFree(4,2));
+            
+            Assert.Equal(exceptionMessage, ex.Message);
         }
     }
 }

@@ -44,8 +44,8 @@ namespace TicTacToe
                     return field;
                 }
             }
-            // TODO: Discussion Null vs Exception
-            return null;
+            // Note: Discussion Null vs Exception (https://stackoverflow.com/questions/175532/should-a-retrieval-method-return-null-or-throw-an-exception-when-it-cant-prod#:~:text=If%20it%20is%20expected%20behavior,is%20a%20matter%20of%20preference.&text=As%20a%20general%20rule%2C%20if,way%2C%20go%20with%20the%20null.)
+            throw new ArgumentException("Row or column inputs are out of range");
         }
     }
 }
