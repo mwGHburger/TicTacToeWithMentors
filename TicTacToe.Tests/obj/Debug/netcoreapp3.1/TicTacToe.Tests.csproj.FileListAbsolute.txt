@@ -96,3 +96,5 @@
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Language Design/MOB/TicTacToeWithMentors/TicTacToe.Tests/obj/Debug/netcoreapp3.1/TicTacToe.Tests.dll
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Language Design/MOB/TicTacToeWithMentors/TicTacToe.Tests/obj/Debug/netcoreapp3.1/TicTacToe.Tests.pdb
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Language Design/MOB/TicTacToeWithMentors/TicTacToe.Tests/obj/Debug/netcoreapp3.1/TicTacToe.Tests.genruntimeconfig.cache
+/Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Language Design/MOB/TicTacToeWithMentors/TicTacToe.Tests/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Language Design/MOB/TicTacToeWithMentors/TicTacToe.Tests/bin/Debug/netcoreapp3.1/Moq.dll

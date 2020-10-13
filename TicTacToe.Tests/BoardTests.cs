@@ -46,13 +46,17 @@ namespace TicTacToe.Tests
             Assert.Equal("X", testField.Value);
         }
 
-        [Fact]
-        public void ShouldThrowException_ForInputsOutOfRange()
+        [Theory]
+        [InlineData(4,1)]
+        [InlineData(0,1)]
+        [InlineData(1,4)]
+        [InlineData(1,0)]
+        public void ShouldThrowException_ForInputsOutOfRange(int row, int column)
         {
             var board = new Board();
             var exceptionMessage = "Row or column inputs are out of range";
 
-            var ex = Assert.Throws<ArgumentException>(() => board.CheckFieldIsFree(4,2));
+            var ex = Assert.Throws<ArgumentException>(() => board.CheckFieldIsFree(row,column));
             
             Assert.Equal(exceptionMessage, ex.Message);
         }

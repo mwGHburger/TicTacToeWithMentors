@@ -10,7 +10,7 @@ namespace TicTacToe
             CreateFields();
         }
 
-        public List<Field> Fields { get; } = new List<Field>(); 
+        public virtual List<Field> Fields { get; } = new List<Field>(); 
 
         private void CreateFields()
         {
