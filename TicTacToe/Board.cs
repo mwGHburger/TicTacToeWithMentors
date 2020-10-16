@@ -3,14 +3,15 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    public class Board
+    public class Board : IBoard
     {
         public Board()
         {
             CreateFields();
         }
 
-        public virtual List<Field> Fields { get; } = new List<Field>(); 
+        public List<Field> Fields { get; } = new List<Field>(); 
+        public int Size { get; } = 3; 
 
         private void CreateFields()
         {

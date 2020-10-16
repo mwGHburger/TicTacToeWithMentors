@@ -2,11 +2,16 @@ using System;
 
 namespace TicTacToe
 {
-    public class ConsoleWrapper
+    public class ConsoleWrapper : IConsoleWrapper
     {
-        public virtual void Write(string input)
+        public void Write(string input)
         {
             Console.WriteLine(input);
+        }
+
+        public string Read()
+        {
+            return Console.ReadLine();
         }
     }
 }
