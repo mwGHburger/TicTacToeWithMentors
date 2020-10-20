@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Moq;
 using Xunit;
+using TicTacToe.Interface;
 
 namespace TicTacToe.Tests
 {
@@ -50,6 +51,7 @@ namespace TicTacToe.Tests
             };
             var mockBoard = SetupBoard(fields);
             var IO = new IO(mockBoard.Object, mockConsoleWrapper.Object);
+            // Io - preferred naming
 
             IO.ShowBoard();
 

@@ -1,4 +1,4 @@
-namespace TicTacToe
+namespace TicTacToe.Interface
 {
     public interface IConsoleWrapper
     {

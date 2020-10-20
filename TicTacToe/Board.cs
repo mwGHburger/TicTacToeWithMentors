@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TicTacToe.Interface;
 
 namespace TicTacToe
 {
@@ -9,8 +10,10 @@ namespace TicTacToe
         {
             CreateFields();
         }
-
+        // Board.Fields
+        // Board.GetFields();
         public List<Field> Fields { get; } = new List<Field>(); 
+
         public int Size { get; } = 3; 
 
         private void CreateFields()

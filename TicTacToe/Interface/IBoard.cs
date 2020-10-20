@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TicTacToe
+namespace TicTacToe.Interface
 {
     public interface IBoard
     {
