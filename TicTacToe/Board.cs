@@ -1,16 +1,20 @@
 using System;
 using System.Collections.Generic;
+using TicTacToe.Interface;
 
 namespace TicTacToe
 {
-    public class Board
+    public class Board : IBoard
     {
         public Board()
         {
             CreateFields();
         }
+        // Board.Fields
+        // Board.GetFields();
+        public List<Field> Fields { get; } = new List<Field>(); 
 
-        public List<Field> Fields = new List<Field>(); 
+        public int Size { get; } = 3; 
 
         private void CreateFields()
         {
@@ -25,16 +29,27 @@ namespace TicTacToe
 
         public bool CheckFieldIsFree(int row, int column)
         {
+            var field = GetField(row, column);
+            return (field.Value == "*") ? true : false;
+        }
+
+        public void SetFieldValue(int row, int column, string symbol)
+        {
+            var field = GetField(row, column);
+            field.Value = symbol;
+        }
+
+        private Field GetField(int row, int column)
+        {
             foreach(Field field in Fields)
             {
                 if (field.Row == row && field.Column == column)
                 {
-                    return (field.Value == "*") ? true : false;
+                    return field;
                 }
             }
-            return false;
+            // Note: Discussion Null vs Exception (https://stackoverflow.com/questions/175532/should-a-retrieval-method-return-null-or-throw-an-exception-when-it-cant-prod#:~:text=If%20it%20is%20expected%20behavior,is%20a%20matter%20of%20preference.&text=As%20a%20general%20rule%2C%20if,way%2C%20go%20with%20the%20null.)
+            throw new ArgumentException("Row or column inputs are out of range");
         }
-
-        
     }
 }
